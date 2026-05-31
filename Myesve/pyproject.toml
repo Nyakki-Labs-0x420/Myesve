@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "myesve"
+version = "1.1.0"
+description = "CVE-2024-38475 exploitation & scanning tool with stealth, proxy, logging, and VPN rotation"
+readme = "README.md"
+authors = [{ name = "Nyakki Labs 0x420", email = "Nyakki-Labs-0x420@proton.me" }]
+license = "AGPL-3.0-or-later"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "requests[socks]>=2.28.0",
+    "termcolor>=2.2.0",
+    "colorama>=0.4.6; sys_platform == 'win32'",
+    "pyfiglet>=0.8.post1",
+    "tqdm>=4.64.0",
+    "ipapi>=1.0.4",
+]
+
+[project.optional-dependencies]
+recon = ["shodan>=1.28", "censys>=2.2"]
+
+[project.scripts]
+myesve = "myesve.cli:main"
+
+[tool.setuptools]
+packages = ["myesve"]
+
+[tool.setuptools.package-data]
+myesve = ["wordlists/*.txt"]
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.black]
+line-length = 79
+target-version = ["py310"]
+
+[tool.flake8]
+max-line-length = 79
+extend-ignore = ["E203", "W503"]
+
+[tool.pylint.messages_control]
+disable = [
+    "import-error",
+    "too-many-arguments",
+    "too-many-positional-arguments",
+    "too-many-instance-attributes",
+    "too-many-nested-blocks",
+    "missing-function-docstring",
+    "missing-class-docstring",
+    "missing-module-docstring",
+    "wrong-import-position",
+    "line-too-long",
+    "consider-using-with",
+    "broad-exception-caught",
+    "too-few-public-methods",
+    "logging-fstring-interpolation",
+    "too-many-locals",
+    "too-many-branches",
+    "too-many-statements",
+    "duplicate-code",
+    "no-else-return",
+]
+
+[tool.mypy]
+ignore_missing_imports = true
+warn_return_any = false
+disallow_untyped_defs = false

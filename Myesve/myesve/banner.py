@@ -9,7 +9,7 @@ COLORS = ["red", "green", "yellow", "blue", "magenta", "cyan", "white"]
 
 
 def show_banner() -> None:
-    """Print a colorful ASCII banner with random font and color."""
+    """Print Myesve's Banner: Just Myesve in diff fonts as well as as diff colors"""
     fonts = ["slant", "banner3", "standard", "big"]
     font = random.choice(fonts)
     ascii_banner = pyfiglet.figlet_format("myesve", font=font)

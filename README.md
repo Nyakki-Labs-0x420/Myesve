@@ -31,10 +31,9 @@ Original discovery by [Orange Tsai](https://blog.orange.tw/).
 - Mullvad VPN CLI – only needed if you use the `--vpn` or `vpn` subcommands. Install from [Mullvad](https://mullvad.net/download/).
 
 ### Install from Source
-
 ```bash
-git clone https://github.com/yourname/myesve.git
-cd myesve
+git clone https://github.com/Nyakki-Labs-0x420/Myesve.git
+cd Myesve
 pip install .
 ```
 
